@@ -4,8 +4,9 @@ import SideBar from "../../component/dashboard/SideBar";
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen flex">
-        {/* sidebar Always visible */}
+    <div className="min-h-screen flex mx-4 my-3">
+        <div className="">
+   {/* sidebar Always visible */}
 
         <SideBar/>
 
@@ -14,6 +15,8 @@ export default function Dashboard() {
          <Outlet/> 
         </div>
 
+        </div>
+       
     </div>
   )
 }
