@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Light mode colors */
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+  --color-card: #ffffff;
+  --color-card-foreground: #0a0a0a;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #0a0a0a;
+  --color-primary: linear-gradient(to right, #a3e635, #22c55e);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f1f5f9;
+  --color-secondary-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-accent: #f97316;
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #65a30d;
+  --color-lime-50: #f7fee7;
+  --color-lime-400: #a3e635;
+  --color-lime-600: #65a30d;
+  --color-green-300: #86efac;
+  --color-green-500: #22c55e;
+  --tw-gradient-to: var(--color-green-500);
+  --tw-gradient-from: var(--color-lime-400);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --color-background: #0a0a0a;
+  --color-foreground: #fafafa;
+  --color-card: #0a0a0a;
+  --color-card-foreground: #fafafa;
+  --color-popover: #0a0a0a;
+  --color-popover-foreground: #fafafa;
+  --color-primary: linear-gradient(to right, #a3e635, #22c55e);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #1e293b;
+  --color-secondary-foreground: #f8fafc;
+  --color-muted: #1e293b;
+  --color-muted-foreground: #94a3b8;
+  --color-accent: #fb923c;
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #1e293b;
+  --color-input: #1e293b;
+  --color-ring: #4d7c0f;
+  --color-lime-50: #f7fee7;
+  --color-lime-400: #a3e635;
+  --color-lime-600: #4d7c0f;
+  --color-green-300: #86efac;
+  --color-green-500: #22c55e;
+  --tw-gradient-to: var(--color-green-500);
+  --tw-gradient-from: var(--color-lime-400);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* Global utility classes */
+.bg-brand-gradient {
+  background: linear-gradient(to right, var(--color-lime-400), var(--color-green-500));
+}
+
+.bg-brand-gradient-logo {
+  background: linear-gradient(to right, var(--color-lime-400), var(--color-green-500));
+}
+
+/* Override Tailwind's primary colors with gradients */
+.bg-primary {
+  background: linear-gradient(to right, var(--color-lime-400), var(--color-green-500)) !important;
+  color: var(--color-primary-foreground);
+}
+
+.text-primary {
+  background: linear-gradient(to right, var(--color-lime-400), var(--color-green-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-primary {
+  border-color: var(--color-lime-400);
+}
+
+.hover\:text-primary:hover {
+  background: linear-gradient(to right, var(--color-lime-400), var(--color-green-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hover\:bg-primary:hover {
+  background: linear-gradient(to right, var(--color-lime-400), var(--color-green-500)) !important;
+}
+
+/* Button gradient styles */
+.btn-primary,
+button[class*="bg-primary"] {
+  background: linear-gradient(to right, var(--color-lime-400), var(--color-green-500)) !important;
+  color: var(--color-primary-foreground);
+  border: none;
+}
+
+.btn-primary:hover,
+button[class*="bg-primary"]:hover {
+  background: linear-gradient(to right, #84cc16, #16a34a) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(163, 230, 53, 0.3);
+}
+
+/* Outline button styles using global colors */
+.border-lime-400 {
+  border-color: var(--color-lime-400);
+}
+
+.text-lime-600 {
+  color: var(--color-lime-600);
+}
+
+.hover\:bg-lime-50:hover {
+  background-color: var(--color-lime-50);
+}
+
+.dark .dark\:border-lime-400 {
+  border-color: var(--color-lime-400);
+}
+
+.dark .dark\:text-lime-400 {
+  color: var(--color-lime-400);
+}
+
+.dark .dark\:hover\:bg-lime-50\/10:hover {
+  background-color: rgba(247, 254, 231, 0.1);
+}
+
+/* Dropdown animations and z-index fixes */
+[data-radix-popper-content-wrapper] {
+  z-index: 999999 !important;
+}
+
+/* Smooth dropdown animations */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes dropdownFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+}
+
+[data-state="open"][data-slot="dropdown-menu-content"] {
+  animation: dropdownFadeIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-state="closed"][data-slot="dropdown-menu-content"] {
+  animation: dropdownFadeOut 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Enhanced hover effects for dropdown items */
+[data-slot="dropdown-menu-radio-item"]:hover {
+  background-color: var(--color-accent);
+  transition: background-color 150ms ease-in-out;
+}
+
+/* Chevron rotation animation */
+[data-state="open"] .chevron-down {
+  transform: rotate(180deg);
+  transition: transform 200ms ease-in-out;
+}
+
+[data-state="closed"] .chevron-down {
+  transform: rotate(0deg);
+  transition: transform 200ms ease-in-out;
+}
