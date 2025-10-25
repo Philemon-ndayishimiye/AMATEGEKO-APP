@@ -1,23 +1,17 @@
 
-import React from 'react';
+
 import { 
   MdDashboard, 
-  MdPeople, 
-  MdPerson, 
-  MdEventSeat,  
+  MdPeople,  
   MdPhotoLibrary, 
-  MdAccountCircle,
 } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 export default function SideBar() {
     const navItems = [
-    { to: '/schoolAdmin/dashboard', label: 'Dashboard', icon: <MdDashboard className="mr-3 text-xl shrink-0" /> },
-    { to: '/schoolAdmin/application', label: 'Students', icon: <MdPeople className="mr-3 text-xl shrink-0" /> },
-    { to: '/schoolAdmin/schoolProfile', label: 'School Profile', icon: <MdPerson className="mr-3 text-xl shrink-0" /> },
-    { to: '/', label: 'Admission Manager', icon: <MdAccountCircle className="mr-3 text-xl shrink-0" /> },
-    { to: '/schoolAdmin/seats', label: 'Available Seats', icon: <MdEventSeat className="mr-3 text-xl shrink-0" /> },
-    { to: '/SchoolAdmin/gallery', label: 'Facilities', icon: <MdPhotoLibrary className="mr-3 text-xl shrink-0" /> },
+    { to: '', label: 'Dashboard', icon: <MdDashboard className="mr-3 text-xl shrink-0" /> },
+    { to: '', label: 'Users', icon: <MdPeople className="mr-3 text-xl shrink-0" /> },
+    { to: '', label: 'Courses', icon: <MdPhotoLibrary className="mr-3 text-xl shrink-0" /> },
     
   ];
 
@@ -43,10 +37,10 @@ export default function SideBar() {
             className="flex items-center px-4 py-4 cursor-pointer hover:bg-white hover:text-primary-color transition-all duration-200 group"
             // onClick={onClose}
           >
-            <span className="text-white group-hover:text-primary-color transition-colors text-[20px]">
+            <span className="text-gray-600 group-hover:text-lime-400 transition-colors text-[20px]">
               {item.icon}
             </span>
-            <span className="text-[17px] font-medium text-gray-300 group-hover:text-primary-color transition-colors">
+            <span className="text-[17px] font-medium text-black group-hover:text-primary-color transition-colors">
               {item.label}
             </span>
           </Link>
