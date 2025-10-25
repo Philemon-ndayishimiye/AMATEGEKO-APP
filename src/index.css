@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+ @theme {
+  --font-family-poppins: 'Poppins', sans-serif;
+  --font-family-playfair: 'Playfair Display', serif;
+/*
+   --color-primary-color: oklch(0.3577 0.0908 247.24);
+   --color-secondary-color:oklch(0.4336 0.0076 255.53); */
+} 
