@@ -1,27 +1,55 @@
 import React, { useState } from "react";
-import type{ IconType } from "react-icons";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { AiOutlineUser, AiOutlineMail, AiOutlineLock, AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 interface InputProps {
   name?: string;
   value?: string;
   placeholder: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  type?: "text" | "email" | "password";
-  icon: IconType; // Icon component passed as prop
+  type: "text" | "email" | "password";
+  variant?: "default" | "danger"; // new variant prop
 }
 
-const Input: React.FC<InputProps> = ({ name, value, placeholder, onChange, type, icon: Icon }) => {
+const Input: React.FC<InputProps> = ({
+  name,
+  value,
+  placeholder,
+  onChange,
+  type,
+  variant = "default",
+}) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const togglePassword = () => {
-    setShowPassword((prev) => !prev);
+  const togglePassword = () => setShowPassword(prev => !prev);
+
+  // Choose left icon based on type
+  const renderLeftIcon = () => {
+    switch (type) {
+      case "email":
+        return <AiOutlineMail style={{ marginRight: "8px" }} />;
+      case "password":
+        return <AiOutlineLock style={{ marginRight: "8px" }} />;
+      default:
+        return <AiOutlineUser style={{ marginRight: "8px" }} />;
+    }
   };
 
+  const borderColor = variant === "danger" ? "red" : "#ccc";
+
   return (
-    <div style={{ display: "flex", alignItems: "center", border: "1px solid #ccc", borderRadius: "4px", padding: "5px 10px", width: "250px" }}>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        border: `1px solid ${borderColor}`,
+        borderRadius: "8px",
+        padding: "3px 9px",
+        width: "100%", // full width
+        boxSizing: "border-box",
+      }}
+    >
       {/* Left Icon */}
-      <Icon style={{ marginRight: "8px" }} />
+      {renderLeftIcon()}
 
       {/* Input Field */}
       <input
@@ -33,9 +61,9 @@ const Input: React.FC<InputProps> = ({ name, value, placeholder, onChange, type,
         style={{ border: "none", outline: "none", flex: 1 }}
       />
 
-      {/* Eye Icon for password toggle */}
+      {/* Eye Icon for password */}
       {type === "password" && (
-        <span onClick={togglePassword} style={{ cursor: "pointer", marginLeft: "8px" }}>
+        <span onClick={togglePassword} style={{ cursor: "pointer", marginLeft: "1px" }}>
           {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
         </span>
       )}
