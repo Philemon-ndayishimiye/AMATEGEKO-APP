@@ -59,7 +59,7 @@ export default function Login() {
               <Input placeholder="Password" type="password" />
 
               <div className="mx-auto w-full max-w-sm py-2">
-                <Button label="Sign In" onClick={()=>navigate('/dashboard')} />
+                <Button label="Sign In" onClick={()=>navigate('/dashboard/dashboardpage')} />
                 <h2 className="pt-9 font-semibold text-[15px] text-center">
                   Don't Have an Account?{" "}
                   <span className="text-lime-400">
