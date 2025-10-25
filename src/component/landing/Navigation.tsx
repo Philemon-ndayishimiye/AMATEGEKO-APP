@@ -23,8 +23,8 @@ export default function Navigation() {
       {/* MIDDLE SECTION (Links) */}
       <div className="hidden md:flex gap-10 font-semibold">
         <Link to="/">Home</Link>
-        <Link to="/">Learn</Link>
-        <Link to="/">Test</Link>
+        <Link to="/login">Learn</Link>
+        <Link to="/login">Test</Link>
       </div>
 
       {/* RIGHT SECTION (Buttons) */}

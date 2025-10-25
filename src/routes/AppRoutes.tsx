@@ -2,6 +2,8 @@ import { Routes , Route } from "react-router-dom"
 import LandingPage from "../pages/LandingPage"
 import SignUp from "../pages/SignUp"
 import Login from "../pages/Login"
+import Dashboard from "../pages/Dashboard/Dashboard"
+
 
 export default function AppRoutes() {
 
@@ -11,6 +13,10 @@ export default function AppRoutes() {
             <Route path="/" element={<LandingPage/>}/>
             <Route path="/getstarted" element={<SignUp/>}/>
             <Route path="/Login" element={<Login/>}/>
+
+            {/* Dashboard */}
+
+            <Route path="/dashboard" element={<Dashboard/>}/>
         </Routes>
     </div>
   )

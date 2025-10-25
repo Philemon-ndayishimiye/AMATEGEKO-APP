@@ -46,6 +46,7 @@ const Input: React.FC<InputProps> = ({
         padding: "3px 9px",
         width: "100%", // full width
         boxSizing: "border-box",
+        fontFamily:"Poppins"
       }}
     >
       {/* Left Icon */}

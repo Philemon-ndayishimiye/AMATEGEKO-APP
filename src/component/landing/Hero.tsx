@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Hero() {
+  const navigate =useNavigate();
   return (
     <section className="w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-10 lg:px-20 py-10 bg-white">
       <div className="max-w-4xl text-center">
@@ -16,12 +19,12 @@ export default function Hero() {
         </h4>
 
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-          <button className="bg-linear-to-r from-lime-400 to-green-500 rounded-md px-8 py-3 text-white font-medium shadow-md hover:opacity-90 transition">
+          <button onClick={()=>{navigate('/login')}} className="bg-linear-to-r from-lime-400 to-green-500 rounded-md px-8 py-3 text-white font-medium shadow-md hover:opacity-90 transition">
             Start Learning
           </button>
 
           <button className="rounded-md px-10 py-3 border border-lime-400 text-lime-600 font-medium hover:bg-lime-50 transition">
-            Take Test
+            Take Quiz
           </button>
         </div>
       </div>
