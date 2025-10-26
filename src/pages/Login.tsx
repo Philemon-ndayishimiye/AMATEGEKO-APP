@@ -57,6 +57,7 @@ export default function Login() {
             <form className="flex flex-col gap-7 mt-2">
               <Input placeholder="Email" type="email" />
               <Input placeholder="Password" type="password" />
+              <p className="font-family-poppins text-lime-400 ml-[73%] cursor-pointer ">Forgot password</p>
 
               <div className="mx-auto w-full max-w-sm py-2">
                 <Button label="Sign In" onClick={()=>navigate('/dashboard/dashboardpage')} />
