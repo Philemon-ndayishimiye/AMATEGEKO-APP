@@ -1,3 +1,4 @@
+import ChartsComponent from "./Charts";
 
 export default function DashboardPage() {
     
@@ -39,6 +40,8 @@ export default function DashboardPage() {
 
          <div>
             <h1 className="font-family-playfair text-3xl text-center font-semibold bg-linear-to-r from-lime-700 to-green-300 bg-clip-text text-transparent  py-2 ">Analytics</h1>
+
+            <ChartsComponent/>
          </div>
 
     </div>

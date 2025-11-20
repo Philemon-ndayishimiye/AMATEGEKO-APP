@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import UsersTable from '../../component/dashboard/Table';
 import Input from '../../component/form/Input';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -12,7 +12,7 @@ export default function UserPage() {
       {/* Header */}
       <div className="flex justify-between mx-6">
         <div>
-          <h1 className="px-2 py-2 text-3xl font-family-playfair bg-gradient-to-r from-lime-600 to-green-300 bg-clip-text text-transparent font-semibold">
+          <h1 className="px-2 py-2 text-3xl font-family-playfair bg-linear-to-r from-lime-600 to-green-300 bg-clip-text text-transparent font-semibold">
             Users
           </h1>
         </div>
@@ -21,7 +21,7 @@ export default function UserPage() {
           {/* Open Modal */}
           <button
             onClick={() => setShowForm(true)}
-            className="bg-gradient-to-r from-lime-400 to-green-500 rounded-lg px-8 py-2 text-white font-medium shadow-md hover:opacity-90 transition cursor-pointer"
+            className="bg-linear-to-r from-lime-400 to-green-500 rounded-lg px-8 py-2 text-white font-medium shadow-md hover:opacity-90 transition cursor-pointer"
           >
             + Add User
           </button>

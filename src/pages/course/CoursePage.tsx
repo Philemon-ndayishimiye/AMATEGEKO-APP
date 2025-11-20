@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import CourseNav from "./CourseNav";
 import Progress from "./Progress";
 import CourseSide from "./CourseSide";
+import Footer from "../../component/landing/Footer";
 
 export default function CoursePage() {
   return (
@@ -16,7 +17,7 @@ export default function CoursePage() {
      </div>
    </div>
       
-
+   <Footer/>
     </div>
   )
 }
